@@ -10,7 +10,7 @@ import Module2 from "./Module2.vue";
 
 export default {
   name: "GetUsers",
-  components: { Module2 }, 
+  components: { Module2 },
   // components, not component. "s" is super important but it doesn't get caught as an error
   data() {
     return {
