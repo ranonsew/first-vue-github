@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- don't use v-bind here, only for arrays it seems? -->
   </div>
 </template>
 
