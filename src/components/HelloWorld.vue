@@ -8,6 +8,7 @@
         >vue-cli documentation</a
       >.
     </p>
+    <button></button>
     <Module1 :title="title[0]" :tools="tools[0]" /> 
     <!-- looks like need to use v-bind here instead -->
     <Module1 :title="title[1]" :tools="tools[1]" />
@@ -31,6 +32,19 @@ export default {
         ["vue-router", "vuex", "vue-devtools", "vue-loader", "awesome-vue"],
       ],
     };
+  },
+  methods: {
+    // methods go here
+    showOther() {
+      // plan: method called when btn clicked. Btn by default says "show ecosystem", while component by default shows "Installed CLI Plugins"
+      // when clicked, btn text switches, and passed in title and tools change from 0 to 1, and vice versa.
+    },
+  },
+  computed: {
+    // computed items
+    buttonShow() {
+      return "";
+    },
   },
 };
 </script>
