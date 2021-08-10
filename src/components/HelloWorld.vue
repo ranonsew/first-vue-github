@@ -8,10 +8,10 @@
         >vue-cli documentation</a
       >.
     </p>
-    <button></button>
-    <Module1 :title="title[0]" :tools="tools[0]" /> 
-    <!-- looks like need to use v-bind here instead -->
-    <Module1 :title="title[1]" :tools="tools[1]" />
+    <button @click="showOther">Show {{ btnText }}</button>
+    <!-- <Module1 :title="titles[0]" :tools="tools[0]" />  -->
+    <Module1 :title="shownTitle" :tools="shownTools" /> 
+    <!--need to use v-bind here because passing in arrays/objects-->
   </div>
 </template>
 
@@ -26,11 +26,13 @@ export default {
   },
   data() {
     return {
-      title: ["Installed CLI Plugins", "Ecosystem"],
+      titles: ["Installed CLI Plugins", "Ecosystem"],
       tools: [
         ["babel", "router", "vuex", "eslint"],
         ["vue-router", "vuex", "vue-devtools", "vue-loader", "awesome-vue"],
       ],
+      btnText: "Ecosystem",
+      showTitle: "Installed CLI Plugins",
     };
   },
   methods: {
@@ -38,12 +40,30 @@ export default {
     showOther() {
       // plan: method called when btn clicked. Btn by default says "show ecosystem", while component by default shows "Installed CLI Plugins"
       // when clicked, btn text switches, and passed in title and tools change from 0 to 1, and vice versa.
+      if (this.btnText == "Ecosystem") {
+        this.btnText = "Installed CLI Plugins";
+        // this.showTitle = "Ecosystem";
+      } else {
+        this.btnText = "Ecosystem";
+        // this.showTitle = "Installed CLI Plugins";
+      }
     },
   },
   computed: {
     // computed items
-    buttonShow() {
-      return "";
+    shownTitle() {
+      if (this.btnText == "Ecosystem") {
+        return this.titles[0];
+      } else {
+        return this.titles[1];
+      }
+    },
+    shownTools() {
+      if (this.btnText == "Ecosystem") {
+        return this.tools[0];
+      } else {
+        return this.tools[1];
+      }
     },
   },
 };
