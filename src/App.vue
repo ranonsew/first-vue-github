@@ -17,6 +17,15 @@ export default {
 </script>
 
 <style>
+:root {
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+  --color-blue: #2f4a85;
+  /* --color-hover-blue: #384ba1; */
+  --color-hover-blue: #428db9;
+  --color-active-blue: #272d67;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
 #app {
   /* styling for the base html */
   font-family: Avenir, Helvetica, Arial, sans-serif;

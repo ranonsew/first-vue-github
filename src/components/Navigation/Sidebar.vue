@@ -11,7 +11,7 @@
     <SidebarLinks to="/" icon="fas fa-home">Home</SidebarLinks>
     <SidebarLinks to="/about" icon="fas fa-image">About</SidebarLinks>
     <SidebarLinks to="/friends" icon="fas fa-users">Friends</SidebarLinks>
-    <SidebarLinks to="/dashboard" icon="fas fa-columns">dashboard</SidebarLinks>
+    <SidebarLinks to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLinks>
 
     <!--double-left does a rotate-180 when collapsed is true-->
     <span
@@ -39,10 +39,14 @@ export default {
 
 <style> /* this here style isn't scoped, so that's why lmao */
 :root {
-  --sidebar-bg-color: #2f4a85;
+  /* --sidebar-bg-color: #2f4a85;
   --sidebar-item-hover: #384ba1;
   --sidebar-item-active: #272d67;
-  font-size: 16px;
+  font-size: 16px; */
+  --sidebar-bg-color: var(--color-blue);
+  --sidebar-item-hover: var(--color-hover-blue);
+  --sidebar-item-active: var(--color-active-blue);
+  /* unsure if I should just rename the lower variables lmao */
 }
 </style>
 

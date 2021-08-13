@@ -9,7 +9,7 @@
         >vue-cli documentation</a
       >.
     </p>
-    <button class="btn-custom btn-rounded bg-blue" @click="showOther">
+    <button class="btn btn-rounded bg-blue" @click="showOther">
       Show {{ btnText }}
     </button>
     <Module1 :title="shownTitle" :tools="shownTools" />

@@ -1,10 +1,5 @@
 /* buttons css */
-:root{
-    --btn-bg-color: #2f4a85;
-    /*not working because it doesn't target root in scoped*/
-    --btn-hover-color: #384ba1;
-}
-.btn-custom {
+.btn {
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -15,12 +10,12 @@
 }
 .bg-blue {
     color: white;
-    background-color: var(--sidebar-bg-color); 
+    background-color: var(--color-blue); 
     /*since sidebar root isn't scoped, should replace and rename these vars in app
     probably, since it would make sense for root to be non-scoped there instead*/
     /* background-color: #2f4a85; */
 }
 .bg-blue:hover {
-    background-color: var(--sidebar-item-hover);
+    background-color: var(--color-hover-blue);
     /* background-color: #384ba1; */
 }
