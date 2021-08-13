@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <!--some day will replace with component header-->
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="Replace logo with header at some point" />
     <!-- don't use v-bind here, only for arrays it seems? -->
   </div>
 </template>

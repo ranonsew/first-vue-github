@@ -3,9 +3,9 @@
     <h1>
       <span v-if="collapsed">
         <div>V</div>
-        <div>S</div>
+        <div>JS</div>
       </span>
-      <span v-else>Vue Sidebar</span>
+      <span v-else>Vue JS</span>
     </h1>
 
     <SidebarLinks to="/" icon="fas fa-home">Home</SidebarLinks>
@@ -13,6 +13,7 @@
     <SidebarLinks to="/friends" icon="fas fa-users">Friends</SidebarLinks>
     <SidebarLinks to="/dashboard" icon="fas fa-columns">dashboard</SidebarLinks>
 
+    <!--double-left does a rotate-180 when collapsed is true-->
     <span
       class="collapse-icon"
       :class="{ 'rotate-180': collapsed }"
@@ -29,7 +30,6 @@ import { collapsed, toggleSidebar, sidebarWidth } from "./sidebarState.js";
 
 export default {
   name: "Sidebar",
-  props: {},
   components: { SidebarLinks },
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth };
@@ -37,11 +37,12 @@ export default {
 };
 </script>
 
-<style>
+<style> /* this here style isn't scoped, so that's why lmao */
 :root {
-  --sidebar-bg-color: #2f855a;
-  --sidebar-item-hover: #38a169;
-  --sidebar-item-active: #276749;
+  --sidebar-bg-color: #2f4a85;
+  --sidebar-item-hover: #384ba1;
+  --sidebar-item-active: #272d67;
+  font-size: 16px;
 }
 </style>
 
@@ -67,7 +68,7 @@ export default {
   position: absolute;
   bottom: 0;
   padding: 0.75em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   transition: 0.2s linear;
   cursor: pointer;
 }

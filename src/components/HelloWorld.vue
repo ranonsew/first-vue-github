@@ -2,15 +2,17 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br />
+      <strong>Default text:</strong> For a guide and recipes on how to configure
+      / customize this project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
         >vue-cli documentation</a
       >.
     </p>
-    <button @click="showOther">Show {{ btnText }}</button>
-    <!-- <Module1 :title="titles[0]" :tools="tools[0]" />  -->
-    <Module1 :title="shownTitle" :tools="shownTools" /> 
+    <button class="btn-custom btn-rounded bg-blue" @click="showOther">
+      Show {{ btnText }}
+    </button>
+    <Module1 :title="shownTitle" :tools="shownTools" />
     <!--need to use v-bind here because passing in arrays/objects-->
   </div>
 </template>
@@ -71,3 +73,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style src="../assets/Modules.css" scoped></style>
+<style src="../assets/Buttons.css" scoped></style>
