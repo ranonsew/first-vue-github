@@ -5,6 +5,7 @@
       <span v-if="!collapsed">
         <slot />
       </span>
+      <span v-else :title="title" class="link tooltip right"></span>
     </transition>
   </router-link>
 </template>
@@ -25,6 +26,10 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
   },
   setup(props) {
     const route = useRoute();
@@ -37,13 +42,15 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.1s;
+  transition: opacity 0.15s;
 }
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
-.link {
+.link,
+.link.tooltip {
+  /* tooltips also :3 */
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -60,6 +67,48 @@ export default {
 .link:hover {
   background-color: var(--sidebar-item-hover);
 }
+
+/* tool tip not working yet :( */
+/* .tooltip:before {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  width: 200px;
+  max-width: 200px;
+  padding: 10px;
+  font-size: 0.8em;
+  line-height: 1.4;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  content: attr(title);
+}
+.tooltip:after {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  content: "";
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: inline-block;
+}
+.right:before {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translateY(-50%);
+}
+.right:after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-left-width: 0;
+  border-right-color: rgba(0, 0, 0, 0.8);
+} */
+
 .link.active {
   background-color: var(--sidebar-item-active);
 }

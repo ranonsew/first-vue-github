@@ -3,15 +3,16 @@
     <h1>
       <span v-if="collapsed">
         <div>V</div>
-        <div>JS</div>
+        <!-- <div>JS</div> -->
       </span>
-      <span v-else>Vue JS</span>
+      <span v-else>Vue</span>
     </h1>
 
-    <SidebarLinks to="/" icon="fas fa-home">Home</SidebarLinks>
-    <SidebarLinks to="/about" icon="fas fa-image">About</SidebarLinks>
-    <SidebarLinks to="/friends" icon="fas fa-users">Friends</SidebarLinks>
-    <SidebarLinks to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLinks>
+    <!-- tool tip on icon? Or in sidebarlinks? -->
+    <SidebarLinks to="/" icon="fas fa-home" title="Home">Home</SidebarLinks>
+    <SidebarLinks to="/about" icon="fas fa-image" title="About">About</SidebarLinks>
+    <SidebarLinks to="/friends" icon="fas fa-users" title="Friends">Friends</SidebarLinks>
+    <SidebarLinks to="/dashboard" icon="fas fa-columns" title="Dashboard">Dashboard</SidebarLinks>
 
     <!--double-left does a rotate-180 when collapsed is true-->
     <span
@@ -67,6 +68,20 @@ export default {
 }
 #sidebar h1 {
   height: 2.5em;
+}
+#sidebar h1::before {
+  content: "";
+  background-color: white;
+  display: block;
+  height: 0.3rem;
+  width: 100%;
+}
+#sidebar h1::after {
+  content: "";
+  background-color: white;
+  display: block;
+  height: 0.3rem;
+  width: 100%;
 }
 .collapse-icon {
   position: absolute;
