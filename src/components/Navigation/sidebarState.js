@@ -6,7 +6,7 @@ export const collapsed = ref(false);
 export const toggleSidebar = () => (collapsed.value = !collapsed.value);
 
 // constant values
-export const SIDEBAR_WIDTH = 180;
+export const SIDEBAR_WIDTH = 184;
 export const SIDEBAR_WIDTH_COLLAPSED = 38;
 
 // sidebarWidth is 38px if value is true, else it is 180px

@@ -1,17 +1,15 @@
 <template>
   <div id="sidebar" :style="{ width: sidebarWidth }">
-    <h2>
+    <h3>
       <span
         class="collapse-icon"
-        :class="{ 'rotate-180': collapsed}"
+        :class="{ 'rotate-180': collapsed }"
         @click="toggleSidebar"
       >
         <i class="fas fa-angle-double-left" />
       </span>
-      <transition name="fade">
-        <span :key="1" v-if="!collapsed" class="">Vue</span>
-      </transition>
-    </h2>
+      <span v-if="!collapsed">ProjectV</span>
+    </h3>
 
     <!-- tool tip on icon? Or in sidebarlinks? -->
     <SidebarLinks to="/" icon="fas fa-home" title="Home">Home</SidebarLinks>
@@ -69,31 +67,14 @@ export default {
   display: flex;
   flex-direction: column;
 }
-#sidebar h2 {
-  height: 2.5em;
-}
-.line-1::before,
-.line-1::after {
-  content: "";
-  background-color: var(--color-offwhite);
-  display: block;
-  height: 0.3rem;
-  width: 100%;
-}
-.line-0::before,
-.line-0::after {
-  content: "";
-  background-color: var(--color-offwhite);
-  display: block;
-  height: 0.3rem;
-  width: 100%;
-  opacity: 0;
+#sidebar h3 {
+  height: 7rem;
 }
 
 .collapse-icon {
   position: absolute;
-  /* top: 0; */
-  left: 0;
+  top: 1.5rem;
+  left: 0.25rem;
   padding: 0 0.75em;
   /* color: var(--color-offwhite); */
   color: white;
@@ -105,14 +86,22 @@ export default {
   transition: 0.2s linear;
 }
 
-.fade-enter-active {
-  transition: opacity 3s ease-out;
-}
-.fade-leave-active {
-  transition: all 0.15s ease-in;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
+/* incomplete stuff that may or may not be reintroduced later */
+/* .line-1::before,
+  .line-1::after {
+    content: "";
+    background-color: var(--color-offwhite);
+    display: block;
+    height: 0.3rem;
+    width: 100%;
+  }
+  .line-0::before,
+  .line-0::after {
+    content: "";
+    background-color: var(--color-offwhite);
+    display: block;
+    height: 0.3rem;
+    width: 100%;
+    opacity: 0;
+  } */
 </style>

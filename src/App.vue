@@ -1,5 +1,7 @@
 <template>
-  <Header />
+  <!-- <Header /> -->
+  <!-- <Sidebar :style="{ 'margin-top': 'calc(var(--header-height) + 1rem)' }" /> -->
+  <Header :style="{ 'margin-left': sidebarWidth }" />
   <Sidebar />
   <div
     :style="{
@@ -32,7 +34,7 @@ export default {
   --color-hover-blue: #428db9;
   --color-active-blue: #272d67;
   --color-offwhite: rgba(255, 255, 255, 0.85);
-  --header-height: 30px;
+  --header-height: 40px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
