@@ -1,27 +1,16 @@
 <template>
   <div id="sidebar" :style="{ width: sidebarWidth }">
-    <!--double-left does a rotate-180 when collapsed is true-->
-    <!-- <span
-      class="collapse-icon"
-      :class="{ 'rotate-180': collapsed }"
-      @click="toggleSidebar"
-    >
-      <i class="fas fa-angle-double-left" />
-    </span> -->
     <h2>
-      <!-- <span class="line-1"></span> -->
       <span
         class="collapse-icon"
-        :class="{ 'rotate-180': collapsed }"
+        :class="{ 'rotate-180': collapsed}"
         @click="toggleSidebar"
       >
         <i class="fas fa-angle-double-left" />
-        <span v-if="collapsed">
-          <span></span>
-        </span>
-        <span class="spacing-1" v-else>Vue</span>
       </span>
-      <!-- <span class="line-1"></span> -->
+      <transition name="fade">
+        <span :key="1" v-if="!collapsed" class="">Vue</span>
+      </transition>
     </h2>
 
     <!-- tool tip on icon? Or in sidebarlinks? -->
@@ -35,15 +24,6 @@
     <SidebarLinks to="/dashboard" icon="fas fa-columns" title="Dashboard"
       >Dashboard</SidebarLinks
     >
-
-    <!--double-left does a rotate-180 when collapsed is true-->
-    <!-- <span
-      class="collapse-icon"
-      :class="{ 'rotate-180': collapsed }"
-      @click="toggleSidebar"
-    >
-      <i class="fas fa-angle-double-left" />
-    </span> -->
   </div>
 </template>
 
@@ -92,26 +72,31 @@ export default {
 #sidebar h2 {
   height: 2.5em;
 }
-.line-1::before {
-  content: "";
-  background-color: white;
-  display: block;
-  height: 0.3rem;
-  width: 100%;
-}
+.line-1::before,
 .line-1::after {
   content: "";
-  background-color: white;
+  background-color: var(--color-offwhite);
   display: block;
   height: 0.3rem;
   width: 100%;
 }
+.line-0::before,
+.line-0::after {
+  content: "";
+  background-color: var(--color-offwhite);
+  display: block;
+  height: 0.3rem;
+  width: 100%;
+  opacity: 0;
+}
+
 .collapse-icon {
   position: absolute;
   /* top: 0; */
   left: 0;
   padding: 0 0.75em;
-  color: rgba(255, 255, 255, 0.85);
+  /* color: var(--color-offwhite); */
+  color: white;
   transition: 0.2s linear;
   cursor: pointer;
 }
@@ -119,8 +104,15 @@ export default {
   transform: rotate(180deg);
   transition: 0.2s linear;
 }
-.spacing-1 {
-  padding-left: 0.5em;
-  transition: 1s ease;
+
+.fade-enter-active {
+  transition: opacity 3s ease-out;
+}
+.fade-leave-active {
+  transition: all 0.15s ease-in;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -5,7 +5,9 @@
       <span v-if="!collapsed">
         <slot />
       </span>
-      <span v-else :title="title" class="link tooltip right"></span>
+      <!-- tooltip currently causing some small issues with the loading, 
+        need to get it right for now -->
+      <!-- <span v-else :title="title" class="link tooltip right"></span> -->
     </transition>
   </router-link>
 </template>
@@ -42,7 +44,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.15s;
+  transition: opacity 0.3s;
 }
 .fade-enter,
 .fade-leave-to {
