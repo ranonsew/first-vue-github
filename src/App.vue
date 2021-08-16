@@ -1,7 +1,7 @@
 <template>
   <!-- <Header /> -->
   <!-- <Sidebar :style="{ 'margin-top': 'calc(var(--header-height) + 1rem)' }" /> -->
-  <Header :style="{ 'margin-left': sidebarWidth }" />
+  <Header />
   <Sidebar />
   <div
     :style="{
@@ -30,12 +30,14 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 :root {
   /* --color-hover-blue: #384ba1; */
-  --color-blue: #2f4a85;
-  --color-hover-blue: #428db9;
-  --color-active-blue: #272d67;
-  --color-offwhite: rgba(255, 255, 255, 0.85);
-  --header-height: 40px;
   font-size: 16px;
+  --color-blue: #2f4a85;
+  --color-light-blue: #428db9;
+  --color-dark-blue: #272d67;
+  --color-darker-blue: #1b2050;
+  --color-offwhite: rgba(255, 255, 255, 0.85);
+  --header-height: 3rem;
+  --sb-transition-speed: 0.3s;
   font-family: "Poppins", sans-serif;
 }
 #app {

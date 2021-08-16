@@ -3,14 +3,17 @@
     <!-- logo goes here probably -->
     <img alt="Vue logo" src="../../assets/logo.png" />
     <!-- search component here -->
+    <SearchBar />
   </div>
 </template>
 
 <script>
+import SearchBar from "./SearchBar.vue";
+
 export default {
   name: "Header",
   props: {},
-  components: {},
+  components: { SearchBar },
   setup() {
     return {};
   },
@@ -20,7 +23,7 @@ export default {
 <style scoped>
 #header {
   color: white;
-  background-color: var(--color-active-blue);
+  background-color: var(--color-dark-blue);
   float: top;
   position: fixed;
   z-index: 1;
@@ -32,8 +35,10 @@ export default {
   display: flex;
   flex-direction: row;
   height: var(--header-height);
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 #header img {
-  margin-left: 1.25em;
+  margin-left: 5rem;
 }
 </style>

@@ -11,11 +11,7 @@
 .bg-blue {
     color: white;
     background-color: var(--color-blue); 
-    /*since sidebar root isn't scoped, should replace and rename these vars in app
-    probably, since it would make sense for root to be non-scoped there instead*/
-    /* background-color: #2f4a85; */
 }
 .bg-blue:hover {
-    background-color: var(--color-hover-blue);
-    /* background-color: #384ba1; */
+    background-color: var(--color-light-blue);
 }

@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 
 // 
-export const collapsed = ref(false);
+export const collapsed = ref(true); // this determines default state of sidebar
 // current value toggled into not of itself, so if true, now false, and vice versa
 export const toggleSidebar = () => (collapsed.value = !collapsed.value);
 

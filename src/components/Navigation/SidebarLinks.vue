@@ -67,7 +67,7 @@ export default {
   text-decoration: none;
 }
 .link:hover {
-  background-color: var(--sidebar-item-hover);
+  background-color: var(--color-light-blue);
 }
 
 /* tool tip not working yet :( */
@@ -112,7 +112,7 @@ export default {
 } */
 
 .link.active {
-  background-color: var(--sidebar-item-active);
+  background-color: var(--color-dark-blue);
 }
 .link .icon {
   flex-shrink: 0;
