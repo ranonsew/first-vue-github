@@ -6,7 +6,7 @@
         :class="{ 'rotate-180': collapsed }"
         @click="toggleSidebar"
       >
-        <i class="fas fa-angle-double-left" />
+        <i class="fas fa-code" />
       </span>
       <span v-if="!collapsed">ProjectV</span>
     </h3>
@@ -49,6 +49,7 @@ export default {
   --sidebar-item-hover: var(--color-hover-blue);
   --sidebar-item-active: var(--color-active-blue);
   /* unsure if I should just rename the lower variables lmao */
+  --transition-speed: 0.3s;
 }
 </style>
 
@@ -63,7 +64,7 @@ export default {
   left: 0;
   bottom: 0;
   padding: 0.5em;
-  transition: 0.3s ease;
+  transition: var(--transition-speed) ease;
   display: flex;
   flex-direction: column;
 }
@@ -78,12 +79,12 @@ export default {
   padding: 0 0.75em;
   /* color: var(--color-offwhite); */
   color: white;
-  transition: 0.2s linear;
+  transition: var(--transition-speed) linear;
   cursor: pointer;
 }
 .rotate-180 {
-  transform: rotate(180deg);
-  transition: 0.2s linear;
+  transform: rotate(360deg);
+  transition: var(--transition-speed) linear;
 }
 
 /* incomplete stuff that may or may not be reintroduced later */

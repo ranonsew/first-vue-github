@@ -6,7 +6,7 @@
   <div
     :style="{
       'margin-left': sidebarWidth,
-      'margin-top': 'calc(var(--header-height) + 1rem)',
+      'margin-top': 'calc(var(--header-height) + 1.5rem)',
     }"
   >
     <router-view />
