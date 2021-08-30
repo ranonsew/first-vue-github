@@ -14,6 +14,7 @@
     </button>
     <Module1 :title="shownTitle" :tools="shownTools" />
     <!--need to use v-bind here because passing in arrays/objects-->
+    <!-- unnecessary to v-bind if just passing in str or num -->
   </div>
 </template>
 
