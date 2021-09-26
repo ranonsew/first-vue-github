@@ -3,6 +3,7 @@
     <i class="icon" :class="icon" />
     <transition name="fade">
       <span v-if="!collapsed">
+        <!-- now we know how the slot works! -->
         <slot />
       </span>
       <!-- tooltip currently causing some small issues with the loading, 

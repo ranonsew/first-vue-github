@@ -7,7 +7,8 @@
   </div>
 </template>
 
-<script>
+<script> 
+// can add axios to this to replace fetch for list and add user functions
 export default {
   name: "Module2",
   data() {

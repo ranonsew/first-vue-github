@@ -2,6 +2,7 @@
   <!-- <Header /> -->
   <!-- <Sidebar :style="{ 'margin-top': 'calc(var(--header-height) + 1rem)' }" /> -->
   <Header />
+  <!-- self closing templates -->
   <Sidebar />
   <div
     :style="{
