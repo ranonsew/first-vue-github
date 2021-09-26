@@ -1,6 +1,8 @@
 <template>
   <h1>The sidebar is {{ collapsed ? "closed" : "open" }}</h1>
-  <button class="btn btn-rounded bg-blue" @click="toggleSidebar">Toggle Sidebar</button>
+  <button class="btn btn-rounded bg-blue" @click="toggleSidebar">
+    Toggle Sidebar
+  </button>
 </template>
 
 <script>
@@ -11,9 +13,9 @@ import {
 
 export default {
   setup() {
-    return { collapsed, toggleSidebar }
-  }
-}
+    return { collapsed, toggleSidebar };
+  },
+};
 </script>
 
 <style src="../assets/Buttons.css" scoped></style>
