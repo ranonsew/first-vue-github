@@ -10,5 +10,4 @@ import axios from "axios";
 
 Vue.prototype.$http = axios; // for some reason can't use axios on its own?
 
-
 createApp(App).use(store).use(router).mount("#app");
