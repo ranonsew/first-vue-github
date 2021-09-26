@@ -9,6 +9,8 @@
 
 <script> 
 // can add axios to this to replace fetch for list and add user functions
+// import axios from "axios";
+
 export default {
   name: "Module2",
   data() {
@@ -52,6 +54,65 @@ export default {
         .then((res) => res.json())
         .then((data) => console.log(data))
         .catch((error) => console.log(error));
+      console.timeEnd("OK"); // end timer when fetch api ends, regardless of success or failure
+    },
+
+    // separating fetch methods and axios methods 
+    async listUsersAxios() {
+      console.time("OK"); // start timer when fetch api starts
+
+      // separating options and url from the actual call (more readable)
+      let options = {
+        headers: { Accept: "application/json" },
+      };
+      let url = "https://reqres.in/api/users?page=2"
+      // async await means don't need to do .then() chaining
+
+      // every try must have a catch!
+      try {
+        // this.$http registered in main so axios no need import every file
+        const listOfUsers = await this.$http.get(url, options);
+        console.log(listOfUsers, listOfUsers.data);
+      } catch (err) {
+        console.log(err, err.response);
+      }
+
+      console.timeEnd("OK"); // end timer when fetch api ends, regardless of success or failure (i.e. returns a 400 level status instead of 200 level status)
+    },
+    async addUserAxios(firstName, lastName, eMail) {
+      console.time("OK"); // start timer when fetch api starts
+      
+      // let options = {
+      //   headers: { Accept: "application/json" },
+      //   data: {
+      //     firstname: firstName,
+      //     lastname: lastName,
+      //     email: eMail,
+      //   },
+      // };
+      // let url = "https://reqres.in/api/users";
+
+
+      // allow axios to be called directly as a method, accepting this config obj
+      // for all the options and request data
+      let config = {
+        method: "post",
+        headers: { Accept: "application/json"},
+        url: "https://reqres.in/api/users",
+        data: {
+          firstname: firstName,
+          lastname: lastName,
+          email: eMail,
+        },
+      };
+
+      try {
+        const addedUser = await this.$http(config); // direct
+        console.log(addedUser, addedUser.data);
+      } catch (err) {
+        console.log(err, err.response);
+      }
+
       console.timeEnd("OK"); // end timer when fetch api ends, regardless of success or failure
     },
   },
