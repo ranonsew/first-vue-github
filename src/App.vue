@@ -4,6 +4,7 @@
   <Header />
   <!-- self closing templates -->
   <Sidebar />
+  <!-- main content section: contains the router-view -->
   <div
     :style="{
       'margin-left': sidebarWidth,
