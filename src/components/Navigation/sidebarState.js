@@ -7,10 +7,10 @@ export const collapsed = ref(true); // this determines default state of sidebar
 export const toggleSidebar = () => (collapsed.value = !collapsed.value);
 
 // constant values
-export const SIDEBAR_WIDTH = 184;
-export const SIDEBAR_WIDTH_COLLAPSED = 38;
+export const SIDEBAR_WIDTH = 11;
+export const SIDEBAR_WIDTH_COLLAPSED = 3.4;
 
 // sidebarWidth is 38px if value is true, else it is 180px
 export const sidebarWidth = computed(
-  () => `${collapsed.value ? SIDEBAR_WIDTH_COLLAPSED : SIDEBAR_WIDTH}px`
+  () => `${collapsed.value ? SIDEBAR_WIDTH_COLLAPSED : SIDEBAR_WIDTH}rem`
 );

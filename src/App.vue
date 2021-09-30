@@ -5,11 +5,13 @@
   <!-- self closing templates -->
   <Sidebar />
   <!-- main content section: contains the router-view -->
+  <!-- transition is the thing making the sidebar flowy, so let's add it to the main content frame -->
   <div
     :style="{
       'margin-left': sidebarWidth,
       'margin-top': 'calc(var(--header-height) + 1.5rem)',
     }"
+    style="transition: var(--sb-transition-speed) ease"
   >
     <router-view />
   </div>

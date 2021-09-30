@@ -1,7 +1,7 @@
 <template>
   <div class="fetch-user">
     <h3>{{ msg }}</h3>
-    <button class="btn btn-fetchUser" @click="listUsers">
+    <button class="btn btn-fetchUser" @click="listUsersAxios">
       List Reqres Users
     </button>
   </div>
@@ -10,7 +10,7 @@
 <script>
 // can add axios to this to replace fetch for list and add user functions
 // import axios from "axios";
-
+import axios from "axios";
 export default {
   name: "Module2",
   data() {
@@ -71,8 +71,10 @@ export default {
       // every try must have a catch!
       try {
         // this.$http registered in main so axios no need import every file
-        const listOfUsers = await this.$http.get(url, options);
-        console.log(listOfUsers, listOfUsers.data);
+        const listOfUsers = await axios.get(url, options);
+        // console.log(listOfUsers, listOfUsers.data);
+        // console.log(listOfUsers.data.data);
+        console.log(listOfUsers.data.data[0].email);
       } catch (err) {
         console.log(err, err.response);
       }
@@ -106,7 +108,7 @@ export default {
       };
 
       try {
-        const addedUser = await this.$http(config); // direct
+        const addedUser = await axios(config); // direct
         console.log(addedUser, addedUser.data);
       } catch (err) {
         console.log(err, err.response);
@@ -115,13 +117,6 @@ export default {
       console.timeEnd("OK"); // end timer when fetch api ends, regardless of success or failure
     },
   },
-  // computed: {
-  //   // insert computed values here, plan to use reqres.in, okie nvm doesn't work, use method instead, thx
-  //   listUsers() {
-  //     fetch("https://reqres.in/api/users").then(res => res.json()).then(data => console.log(data));
-  //     return null;
-  //   },
-  // },
 };
 </script>
 

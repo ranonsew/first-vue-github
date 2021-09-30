@@ -1,8 +1,10 @@
 <template>
-  <h3>{{ title }}</h3>
-  <ul>
-    <li v-for="tool in tools" :key="tool">{{ tool }}</li>
-  </ul>
+  <div id="somethingscoped">
+    <h3>{{ title }}</h3>
+    <ul>
+      <li v-for="tool in tools" :key="tool">{{ tool }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>

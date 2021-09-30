@@ -1,6 +1,6 @@
 <template>
   <div id="sidebar" :style="{ width: sidebarWidth }">
-    <h3>
+    <h4>
       <span
         class="collapse-icon"
         :class="{ 'rotate-180': collapsed }"
@@ -11,7 +11,7 @@
       <transition name="fade">
         <span v-show="!collapsed">ProjectV</span>
       </transition>
-    </h3>
+    </h4>
 
     <!-- tool tip on icon? Or in sidebarlinks? -->
     <SidebarLinks to="/" icon="fas fa-home" title="Home">Home</SidebarLinks>
@@ -37,12 +37,6 @@ export default {
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth };
   },
-  // computed: {
-  //   extraTime() {
-  //     setTimeout(()=>{return "ProjectV"}, 1000);
-  //     return "ProjectV";
-  //   },
-  // },
 };
 </script>
 
@@ -62,7 +56,8 @@ export default {
   display: flex;
   flex-direction: column;
 }
-#sidebar h3 {
+#sidebar h3,
+h4 {
   height: 4rem;
 }
 
@@ -70,7 +65,7 @@ export default {
 .collapse-icon {
   position: absolute;
   top: 1.65rem;
-  left: 0.25rem;
+  left: -0.34rem;
   padding: 0 0.75em;
   /* color: var(--color-offwhite); */
   color: white;
