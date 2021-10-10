@@ -72,8 +72,8 @@ export default {
       // every try must have a catch!
       try {
         // this.$http registered in main so axios no need import every file
-        // const listOfUsers = await $http.get(url, options); // using axios import globally
-        const listOfUsers = await axios.get(url, options); // using axios import locally
+        const listOfUsers = await this.$http.get(url, options); // using axios import globally
+        // const listOfUsers = await axios.get(url, options); // using axios import locally
         // console.log(listOfUsers, listOfUsers.data);
         // console.log(listOfUsers.data.data);
         console.log(listOfUsers.data.data[0].email);

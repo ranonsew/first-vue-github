@@ -13,4 +13,4 @@ import axios from "axios";
 const application = createApp(App);
 application.use(store).use(router).mount("#app");
 application.config.globalProperties.$http = axios;
-// still can't lmao, wtf am I doing wrong, I dunno
+// this.$http to get it working lmao, got it when reading the vuex doc
