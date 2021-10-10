@@ -55,18 +55,22 @@ export default {
   computed: {
     // computed items
     shownTitle() {
-      if (this.btnText == "Ecosystem") {
-        return this.titles[0];
-      } else {
-        return this.titles[1];
-      }
+      // if (this.btnText == "Ecosystem") {
+      //   return this.titles[0];
+      // } else {
+      //   return this.titles[1];
+      // }
+      // using ternary conditional operator because it is cleaner looking
+      return this.btnText == "Ecosystem" ? this.titles[0] : this.titles[1];
     },
     shownTools() {
-      if (this.btnText == "Ecosystem") {
-        return this.tools[0];
-      } else {
-        return this.tools[1];
-      }
+      // if (this.btnText == "Ecosystem") {
+      //   return this.tools[0];
+      // } else {
+      //   return this.tools[1];
+      // }
+      // ternary conditional operator is a lot cleaner looking
+      return this.btnText == "Ecosystem" ? this.titles[1] : this.titles[0];
     },
   },
 };
