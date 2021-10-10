@@ -1,13 +1,16 @@
 import { createApp } from "vue";
 // import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
-import "@fortawesome/fontawesome-free/js/all";
-// import axios from "axios";
+import App from "./App.vue"; // the virtual dom app
+import router from "./router"; // vue router for single page application routing
+import store from "./store"; // vuex store as a state management system
+import "bootstrap/dist/css/bootstrap.min.css"; // bootstrap because why not
+import "bootstrap"; // more bootstrap because alright
+import "@fortawesome/fontawesome-free/js/all"; // font awesome icons
+import axios from "axios";
 
 // Vue.prototype.$http = axios; // for some reason can't use axios on its own?
 
-createApp(App).use(store).use(router).mount("#app");
+const application = createApp(App);
+application.use(store).use(router).mount("#app");
+application.config.globalProperties.$http = axios;
+// still can't lmao, wtf am I doing wrong, I dunno
