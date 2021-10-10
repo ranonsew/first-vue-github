@@ -35,6 +35,7 @@ export default {
   name: "Sidebar",
   components: { SidebarLinks },
   setup() {
+    // composition api used to initialize imported components more easily
     return { collapsed, toggleSidebar, sidebarWidth };
   },
 };

@@ -34,8 +34,11 @@ export default {
     },
   },
   setup(props) {
+    // composition api, passing in props to use them in inside
     const route = useRoute();
+    // composition api, retrieving route of the current component
     const isActive = computed(() => route.path === props.to);
+    // isActive is true where route path is the same as the routerlink hovered over (based on props.to)
     return { isActive, collapsed };
   },
 };
