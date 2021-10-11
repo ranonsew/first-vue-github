@@ -62,19 +62,14 @@ export default {
     async listUsersAxios() {
       console.time("OK"); // start timer when fetch api starts
 
-      // separating options and url from the actual call (more readable)
       let options = {
         headers: { Accept: "application/json" },
       };
       let url = "https://reqres.in/api/users?page=2";
-      // async await means don't need to do .then() chaining
 
-      // every try must have a catch!
       try {
-        // this.$http registered in main so axios no need import every file
         const listOfUsers = await this.$http.get(url, options); // using axios import globally
         // const listOfUsers = await axios.get(url, options); // using axios import locally
-        // console.log(listOfUsers, listOfUsers.data);
         // console.log(listOfUsers.data.data);
         console.log(listOfUsers.data.data[0].email);
       } catch (err) {
@@ -83,21 +78,10 @@ export default {
 
       console.timeEnd("OK"); // end timer when fetch api ends, regardless of success or failure (i.e. returns a 400 level status instead of 200 level status)
     },
+
     async addUserAxios(firstName, lastName, eMail) {
       console.time("OK"); // start timer when fetch api starts
 
-      // let options = {
-      //   headers: { Accept: "application/json" },
-      //   data: {
-      //     firstname: firstName,
-      //     lastname: lastName,
-      //     email: eMail,
-      //   },
-      // };
-      // let url = "https://reqres.in/api/users";
-
-      // allow axios to be called directly as a method, accepting this config obj
-      // for all the options and request data
       let config = {
         method: "post",
         headers: { Accept: "application/json" },
