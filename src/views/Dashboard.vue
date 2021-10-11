@@ -4,7 +4,15 @@
     Toggle Sidebar
   </button>
   <br />
-  <fluxCounter />
+  <!-- component tag necessary, with v-bind is -->
+  <!-- current simplest way to implement -->
+  <div class="dynamic-components">
+    <button @click="currentComponent = 'fluxCounter'">fluxCounter</button>
+    <button @click="currentComponent = 'Module3'">Module3</button>
+    <button @click="changeComponent">Switch</button>
+    <component :is="currentComponent" />
+  </div>
+  <!-- <fluxCounter /> -->
 </template>
 
 <script>
@@ -14,9 +22,34 @@ import {
   collapsed,
   toggleSidebar,
 } from "@/components/Navigation/sidebarState.js";
+
 import fluxCounter from "@/components/fluxCounter.vue";
+import Module3 from "@/components/Module3.vue";
+
 export default {
-  components: { fluxCounter },
+  components: {
+    fluxCounter,
+    Module3,
+  },
+  data() {
+    return {
+      // can be a string, but I'm gonna keep it consistent
+      currentComponent: fluxCounter,
+      availableComponents: [fluxCounter, Module3],
+    };
+  },
+  method: {
+    changeComponent() {
+      console.log(this.currentComponent);
+      let len = this.availableComponents.length;
+      let currentIndex = this.availableComponents.indexOf(
+        this.currentComponent
+      );
+      currentIndex = currentIndex == len ? 0 : currentIndex + 1;
+      this.currentComponent = this.availableComponents[currentIndex];
+      console.log(this.currentComponent);
+    },
+  },
   setup() {
     return { collapsed, toggleSidebar };
   },
