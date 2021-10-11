@@ -68,8 +68,8 @@ export default {
       let url = "https://reqres.in/api/users?page=2";
 
       try {
-        const listOfUsers = await this.$http.get(url, options); // using axios import globally
-        // const listOfUsers = await axios.get(url, options); // using axios import locally
+        // const listOfUsers = await this.$http.get(url, options); // using axios import globally
+        const listOfUsers = await axios.get(url, options); // using axios import locally
         // console.log(listOfUsers.data.data);
         console.log(listOfUsers.data.data[0].email);
       } catch (err) {
