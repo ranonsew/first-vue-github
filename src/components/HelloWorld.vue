@@ -70,7 +70,7 @@ export default {
       //   return this.tools[1];
       // }
       // ternary conditional operator is a lot cleaner looking
-      return this.btnText == "Ecosystem" ? this.titles[1] : this.titles[0];
+      return this.btnText == "Ecosystem" ? this.tools[1] : this.tools[0];
     },
   },
 };
