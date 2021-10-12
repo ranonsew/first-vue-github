@@ -34,20 +34,18 @@ export default {
   data() {
     return {
       // can be a string, but I'm gonna keep it consistent
-      currentComponent: fluxCounter,
-      availableComponents: [fluxCounter, Module3],
+      currentComponent: "fluxCounter",
+      availableComponents: ["fluxCounter", "Module3"],
     };
   },
-  method: {
+  methods: {
     changeComponent() {
-      console.log(this.currentComponent);
       let len = this.availableComponents.length;
       let currentIndex = this.availableComponents.indexOf(
         this.currentComponent
       );
-      currentIndex = currentIndex == len ? 0 : currentIndex + 1;
+      currentIndex = currentIndex == len - 1 ? 0 : currentIndex + 1;
       this.currentComponent = this.availableComponents[currentIndex];
-      console.log(this.currentComponent);
     },
   },
   setup() {
