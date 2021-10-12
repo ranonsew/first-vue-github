@@ -1,6 +1,7 @@
 import { ref, computed } from "vue";
 
-// state management area since small project, i.e. vuex not needed yet
+// state management area when project was smaller
+// might want to move this into vuex now since I have started on that.
 
 export const collapsed = ref(true); // this determines default state of sidebar
 // current value toggled into not of itself, so if true, now false, and vice versa
