@@ -21,6 +21,7 @@
     <SidebarLinks to="/friends" icon="fas fa-users" title="Friends"
       >Friends</SidebarLinks
     >
+    <!-- Friends is passed in text data which will display if slot is added in subcomponent -->
     <SidebarLinks to="/dashboard" icon="fas fa-columns" title="Dashboard"
       >Dashboard</SidebarLinks
     >

@@ -2,7 +2,9 @@
   <router-link :to="to" class="link" :class="{ active: isActive }">
     <i class="icon" :class="icon" />
     <transition name="fade">
+      <!-- if not collapsed, passed in text is shown -->
       <span v-if="!collapsed">
+        <!-- the pass in data appears in slot -->
         <slot />
       </span>
       <!-- tooltip currently causing some small issues with the loading, 
