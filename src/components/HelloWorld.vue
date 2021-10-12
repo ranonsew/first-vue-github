@@ -9,10 +9,10 @@
         >vue-cli documentation</a
       >.
     </p>
-    <button class="btn btn-rounded bg-blue" @click="showOther">
+    <button class="btn btn-rounded bg-primary text-white" @click="showOther">
       Show {{ btnText }}
     </button>
-    <Module1 :title="shownTitle" :tools="shownTools" />
+    <Module1 class="container-md" :title="shownTitle" :tools="shownTools" />
     <!--need to use v-bind here because passing in arrays/objects-->
     <!-- unnecessary to v-bind if just passing in str or num -->
   </div>
@@ -78,4 +78,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style src="../assets/Modules.css" scoped></style>
-<style src="../assets/Buttons.css" scoped></style>
+<!-- <style src="../assets/Buttons.css" scoped></style> -->
