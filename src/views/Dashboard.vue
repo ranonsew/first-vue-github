@@ -3,12 +3,13 @@
   <button class="btn btn-rounded bg-blue" @click="toggleSidebar">
     Toggle Sidebar
   </button>
-  <br />
+  <br /><br />
   <!-- component tag necessary, with v-bind is -->
   <!-- current simplest way to implement -->
   <button @click="currentComponent = 'fluxCounter'">fluxCounter</button>
   <button @click="currentComponent = 'Module3'">Module3</button>
   <button @click="changeComponent">Switch</button>
+  <hr />
   <keep-alive>
     <component :is="currentComponent" />
   </keep-alive>

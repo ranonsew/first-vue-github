@@ -1,11 +1,14 @@
 <template>
-  <label for="locale">locale</label>
-  <select v-model="$i18n.locale">
-    <option>en</option>
-    <option>cn</option>
-    <option>jp</option>
-  </select>
-  <p>message: {{ $t("welcome") }}</p>
+  <div class="mod-3">
+    <label for="locale">locale</label>
+    <select v-model="$i18n.locale">
+      <option>en</option>
+      <option>cn</option>
+      <option>jp</option>
+    </select>
+    <br /><br />
+    <p>{{ $t("welcome") }}</p>
+  </div>
 </template>
 
 <script>

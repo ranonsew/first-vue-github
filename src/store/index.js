@@ -7,7 +7,7 @@ export default createStore({
   }, // main data store
   mutations: {
     increment(state) {
-      // like setup passing props, mutations must pass state to use
+      // like setup passing props, pass state to use
       state.counter++;
     },
     decrement(state) {
@@ -34,7 +34,13 @@ export default createStore({
       }
     },
   }, // asynchronous actions using .dispatch
-  getters: {}, // retrieving data from the state, change/filter data in some way that we can't when directly getting data from store (like before it is available to components)
+  getters: {
+    // returns the square of the current count to display
+    counterSquared(state) {
+      // pass state through
+      return state.counter ** 2;
+    },
+  }, // retrieving data from the state, change/filter data in some way that we can't when directly getting data from store (like before it is available to components)
   // like if we want to grab square of counter, and make available everywhere, use a getter
   modules: {}, // break up store into multiple mod, each has own state/mutation/action/getter, like a second pg with diff functionality
 });
