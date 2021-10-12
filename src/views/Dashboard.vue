@@ -6,12 +6,12 @@
   <br />
   <!-- component tag necessary, with v-bind is -->
   <!-- current simplest way to implement -->
-  <div class="dynamic-components">
-    <button @click="currentComponent = 'fluxCounter'">fluxCounter</button>
-    <button @click="currentComponent = 'Module3'">Module3</button>
-    <button @click="changeComponent">Switch</button>
+  <button @click="currentComponent = 'fluxCounter'">fluxCounter</button>
+  <button @click="currentComponent = 'Module3'">Module3</button>
+  <button @click="changeComponent">Switch</button>
+  <keep-alive>
     <component :is="currentComponent" />
-  </div>
+  </keep-alive>
   <!-- <fluxCounter /> -->
 </template>
 
