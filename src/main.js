@@ -5,6 +5,7 @@ import router from "./router"; // vue router for single page application routing
 import store from "./store"; // vuex store as a state management system
 import "bootstrap/dist/css/bootstrap.min.css"; // bootstrap because why not
 import "bootstrap"; // more bootstrap because alright
+// import "bootstrap/scss/bootstrap.scss"; // bootstrap scss
 import "@fortawesome/fontawesome-free/js/all"; // font awesome icons
 // import axios from "axios"; // axios for ajax requests
 import i18n from "./i18n"; // language internationalization
