@@ -35,6 +35,7 @@ export default createStore({
     },
   }, // asynchronous actions using .dispatch
   getters: {
+    // akin to computed properties
     // returns the square of the current count to display
     counterSquared(state) {
       // pass state through
