@@ -7,9 +7,6 @@
         <!-- the pass in data appears in slot -->
         <slot />
       </span>
-      <!-- tooltip currently causing some small issues with the loading, 
-        need to get it right for now -->
-      <!-- <span v-else :title="title" class="link tooltip right"></span> -->
     </transition>
   </router-link>
 </template>
@@ -55,8 +52,7 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
-.link,
-.link.tooltip {
+.link {
   /* tooltips also :3 */
   display: flex;
   align-items: center;
@@ -74,48 +70,6 @@ export default {
 .link:hover {
   background-color: var(--color-light-blue);
 }
-
-/* tool tip not working yet :( */
-/* .tooltip:before {
-  position: absolute;
-  z-index: 2;
-  display: none;
-  width: 200px;
-  max-width: 200px;
-  padding: 10px;
-  font-size: 0.8em;
-  line-height: 1.4;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  content: attr(title);
-}
-.tooltip:after {
-  position: absolute;
-  z-index: 1;
-  display: none;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  content: "";
-}
-.tooltip:hover:before,
-.tooltip:hover:after {
-  display: inline-block;
-}
-.right:before {
-  top: 50%;
-  left: calc(100% + 5px);
-  transform: translateY(-50%);
-}
-.right:after {
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  border-left-width: 0;
-  border-right-color: rgba(0, 0, 0, 0.8);
-} */
-
 .link.active {
   background-color: var(--color-dark-blue);
 }
